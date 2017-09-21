@@ -57,7 +57,15 @@ class GmailApiTransport implements \Swift_Transport
     /**
      * {@inheritdoc}
      */
-    public function send(\Swift_Mime_Message $swiftMessage, &$failedRecipients = null)
+    public function ping()
+    {
+
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function send(\Swift_Mime_SimpleMessage $swiftMessage, &$failedRecipients = null)
     {
         $gmailMessage = new \Google_Service_Gmail_Message();
         $gmailMessage->setRaw($this->base64UrlEncode($swiftMessage));
