@@ -88,6 +88,7 @@ class Thread
             if ($exception->getCode() === 404) {
                 return;
             }
+
             throw $exception;
         }
     }

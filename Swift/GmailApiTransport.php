@@ -145,6 +145,7 @@ class GmailApiTransport implements \Swift_Transport
 
             return $fromString;
         }
+
         throw new \InvalidArgumentException('Set at least one \'from\' address when using '.self::class);
     }
 
