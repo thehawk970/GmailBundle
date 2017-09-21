@@ -1,13 +1,9 @@
 language: php
 
-php:
-  - 7.1
-
-env:
-  - SWIFT_VERSION=~6.0.0
-
 matrix:
   include:
+    - php: 7.1
+      env: SWIFT_VERSION=~6.0.0
     - php: 7.1
       env: SWIFT_VERSION=~5.4.0
 
