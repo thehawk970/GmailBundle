@@ -112,6 +112,7 @@ class Email
         foreach ($batchResponses as $response) {
             if ($response instanceof \Google_Service_Gmail_Message) {
                 $foundApiMessages[] = $response;
+
                 continue;
             }
             if (
@@ -123,6 +124,7 @@ class Email
             if ($response instanceof \Google_Service_Exception) {
                 throw $response;
             }
+
             throw new \RuntimeException(sprintf(
                 'Expected response to be of class %s or %s, but instead got %s',
                 \Google_Service_Gmail_Message::class,

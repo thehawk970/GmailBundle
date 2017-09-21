@@ -178,14 +178,17 @@ class Directory
         switch ($mode) {
             case self::MODE_RESOLVE_PRIMARY_ONLY:
                 $gmailUser = $this->getGmailDomain()->findGmailUserByPrimaryEmail($email);
+
                 break;
 
             case self::MODE_RESOLVE_ALIASES_ONLY:
                 $gmailUser = $this->getGmailDomain()->findGmailUserByEmailAlias($email);
+
                 break;
 
             case self::MODE_RESOLVE_PRIMARY_PLUS_ALIASES:
                 $gmailUser = $this->getGmailDomain()->findGmailUserByEmail($email);
+
                 break;
 
             default:
